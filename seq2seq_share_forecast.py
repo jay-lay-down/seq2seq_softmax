@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Seq2Seq(Attention LSTM)로 ...Share 타깃들을 예측/평가/시각화하는 CLI 툴
-- 입력: 엑셀(.xlsx) | date(또는 Year/Month) + 타깃(...Share) + (선택) 외생변수
-- 타깃 자동 인식: 'Share'로 끝나는 모든 컬럼
-- 타깃 자동 정규화: 퍼센트/원핫/임의 스케일 → 행합=1 분포
-- exog 없으면 Granger/Lag 자동 패스
-- 2023-01부터 실제 vs 예측 비교, 2026-12까지 예측(옵션)
-- 오차 패널 PNG + 실제/예측 GIF(옵션) 생성
-"""
-
 import os, re, sys, argparse, warnings
 warnings.filterwarnings("ignore")
 
