@@ -1,4 +1,3 @@
-# seq2seq_softmax
 # Seq2Seq Share Forecasting with Attention Mechanism
 
 ## 📖 Overview
@@ -219,7 +218,12 @@ For improvements or bug reports, please ensure:
 
 ## 📄 License
 
-This project is developed for research and commercial forecasting applications. Please ensure compliance with your organization's data usage policies.
+MIT License - see LICENSE file for details.
+
+## 👤 Author
+
+**Jihee Cho**  
+Email: chubbyfinger1010@gmail.com
 
 ---
 
