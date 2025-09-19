@@ -249,12 +249,14 @@ def main(args):
             for h in range(H):
                 fut_sh = df.iloc[i+K+h][share_cols].to_numpy(np.float32)
                 s[h] = fut_sh
-                prev_sh = last_sh if h==0 else df.iloc{i+K+h-1}[share_cols].to_numpy(np.float32)
+                # <<< 고친 부분: iloc[ ... ] >>>
+                prev_sh = last_sh if h==0 else df.iloc[i+K+h-1][share_cols].to_numpy(np.float32)
                 parts=[prev_sh]
                 if use_exogs:
                     fut_ex = df.iloc[i+K+h][use_exogs].to_numpy(np.float32)
                     prev_ex= last_ex if h==0 else df.iloc[i+K+h-1][use_exogs].to_numpy(np.float32)
-                    parts.append(prev_ex); e[h]=fut_ex
+                    parts.append(prev_ex); 
+                    if e is not None: e[h]=fut_ex
                 d[h] = np.concatenate(parts)
             dec.append(d); ts.append(s);
             if OUT_EXOG_DIM>0: te.append(e)
