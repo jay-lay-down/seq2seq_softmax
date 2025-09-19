@@ -71,7 +71,23 @@ OUT_DIR   = "/path/to/output/directory"   # Output directory
 
 ### 2. Run the Complete Pipeline
 ```python
-python seq2seq_forecasting.py
+# Share Forecast (Seq2Seq + Attention)
+
+## 설치
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+
+## 실행
+python seq2seq_share_forecast.py --input "/절대/경로/sampledata.xlsx" --out_dir "./out" --gif
+
+옵션:
+--sheet 0              # 엑셀 시트 인덱스
+--test_start 2023-01-01
+--forecast_end 2026-12-01
+--K 6 --H 3            # 시퀀스 길이
+--epochs 30            # 조기종료 포함
+--gif                  # 브랜드별 Actual vs Pred GIF 생성
 ```
 
 ### 3. Key Parameters
